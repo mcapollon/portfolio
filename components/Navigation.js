@@ -2,6 +2,7 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { FaceSmileIcon } from '@heroicons/react/20/solid'
+import TransitionLink from './TransitionLink'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -17,7 +18,7 @@ export default function Navigation() {
               <div className="flex grow justify-between pr-9">
                 <div className="-ml-2 mr-2 flex items-center md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all ease-in-out duration-1000  hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -32,18 +33,20 @@ export default function Navigation() {
                 </div>
                 <div className="hidden md:ml-6 md:flex md:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                  <a
+                  {/* <a
                     href="/"
-                    className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-mono font-bold text-black"
+                    className="transition-all ease-in-out duration-1000 inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-mono font-bold text-black hover:border-black/90"
                   >
                     Projects
-                  </a>
-                  <a
+                  </a> */}
+                  <TransitionLink href="/" label="Projects"/>
+                  {/* <a
                     href="/about"
-                    className="transition-all inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black/90 font-mono"
+                    className="transition-all ease-in-out duration-1000 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black/90 font-mono"
                   >
                     About
-                  </a>
+                  </a> */}
+                  <TransitionLink href="/about" label="About" />
                   {/* <a
                     href="/blog"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black/90 font-mono"
@@ -56,12 +59,13 @@ export default function Navigation() {
                   >
                     Music
                   </a> */}
-                  <a
+                  {/* <a
                     href="/contact"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black/90 font-mono"
+                    className="transition-all ease-in-out duration-1000 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black/90 font-mono"
                   >
                     Contact
-                  </a>
+                  </a> */}
+                  <TransitionLink href="/contact" label="Contact" />
                 </div>
               </div>
               {/* <div className="flex items-center">
@@ -97,7 +101,7 @@ export default function Navigation() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/blog"
+                href="/contact"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
               >
                 Contact

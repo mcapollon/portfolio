@@ -1,19 +1,22 @@
 'use client'
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect } from 'react'
+import { animatePageIn } from './utils/animation'
 import Navigation from '@/components/Navigation'
 
 function Transition({ children }) {
+    useEffect(() => {
+        animatePageIn()
+    }, [])
+
     return (
-        <motion.div
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}>
-            <div>
-                <Navigation />
-                {children}
-            </div>
-        </motion.div>
+        <div>
+            <div id='banner-1' className='min-h-screen bg-neutral-950 z-10 fixed top-0 left-0 w-1/4' />
+            <div id='banner-2' className='min-h-screen bg-neutral-950 z-10 fixed top-0 left-1/4 w-1/4' />
+            <div id='banner-3' className='min-h-screen bg-neutral-950 z-10 fixed top-0 left-2/4 w-1/4' />
+            <div id='banner-4' className='min-h-screen bg-neutral-950 z-10 fixed top-0 left-3/4 w-1/4' />
+            <Navigation />
+            {children}
+        </div>
     )
 }
 
