@@ -14,7 +14,7 @@ function ProjectCard({ project, selected }) {
       <div
         key={key}
         id={projects.project.id + "-slider-container"}
-        className="flex overflow-x-scroll gap-4 no-scrollbar"
+        className="flex overflow-x-scroll gap-4 no-scrollbar cursor-grab"
         {...events}
         ref={ref}
       >
@@ -22,7 +22,7 @@ function ProjectCard({ project, selected }) {
           <img
             key={i}
             src={src}
-            className="image-slider-image h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm hover:cursor-grabbing"
+            className="image-slider-image h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
           />
         ))}
       </div>
@@ -30,11 +30,11 @@ function ProjectCard({ project, selected }) {
   }
 
   return (
-    <span className="z-10 transition-all">
+    <span className="z-10">
       <div
         id={`${project.id}-card`}
         className={`overflow-hidden transition-all ease-in duration-1000 delay-700 py-1 ${
-          selected === `${project.id}`  ? '' : "hidden"
+          selected === `${project.id}`  ? '' : "transition-all ease-in duration-500 hidden"
         }`}
       >
         <div>

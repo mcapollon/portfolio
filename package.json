@@ -12,13 +12,16 @@
     "@gsap/react": "^2.1.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "axios": "^1.7.2",
     "framer-motion": "^11.3.2",
     "gsap": "^3.12.5",
     "keen-slider": "^6.8.6",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
     "react-use-draggable-scroll": "^0.4.7",
+    "resend": "^3.4.0",
     "sass": "^1.70.0"
   },
   "devDependencies": {

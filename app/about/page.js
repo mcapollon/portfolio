@@ -1,14 +1,7 @@
-const stats = [
-  { label: 'Founded', value: '2021' },
-  { label: 'Employees', value: '37' },
-  { label: 'Countries', value: '12' },
-  { label: 'Raised', value: '$25M' },
-]
-
 const socials = [
-  { label: 'EMAIL', value: 'contact@mckinsleyapollon.com' },
-  { label: 'LINKEDIN', value: 'mckinsleyLinkedIN.com.oasd' },
-  { label: 'GITHUB', value: 'githubLinkedtoBeFeatured' },
+  { label: 'EMAIL', text: 'mckinsleyapollon@hotmail.com', link: 'mailto:mckinsleyapollon@hotmail.com' },
+  { label: 'LINKEDIN', text: 'www.linkedin.com/in/mcapollon', link: 'https://linkedin.com/in/mcapollon' },
+  { label: 'GITHUB', text: 'www.github.com/mcapollon', link: 'https://github.com/mcapollon' },
 ]
 
 export default function About() {
@@ -33,14 +26,14 @@ export default function About() {
                     clipPath:
                       'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                   }}
-                  className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-40"
+                  className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#a8d5ff] to-[#317cfc] opacity-40"
                 />
               </div>
               <ul role="list" className="relative divide-y divide-gray-200">
                 {socials.map((social, i) => (
                   <li key={i} className="py-4">
                     <h1 className="text-lg tracking-widest font-semibold leading-7 text-white capitalize">{social.label}</h1>
-                    <p className="text-md leading-7 text-white">{social.value}</p>
+                    <a href={social.link}><p className="text-md leading-7 text-white">{social.text}</p></a>
                   </li>
                 ))}
               </ul>

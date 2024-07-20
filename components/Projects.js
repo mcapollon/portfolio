@@ -11,12 +11,12 @@ function Projects() {
     {
       name: "Instaborne",
       short_description:
-        "Website and admin for electric charging station company built with react & next js.",
+        "Website development, estimation form and admin dashboard for electric charging station company built with react & next js.",
       url: "https://instaborne.ca/",
       screenshots: [
-        "/assets/natyf.png",
-        "/assets/promutuel.png",
-        "/assets/instaborne.jpeg",
+        "/assets/instaborne/instaborne-homePage.png",
+        "/assets/instaborne/instaborne-estimationForm.png",
+        "/assets/instaborne/instaborne-simulateurCout.png",
       ],
       strip_img: "instaborne",
       id: "instaborne",
@@ -26,12 +26,13 @@ function Projects() {
     {
       name: "Promutuel",
       short_description:
-        "Website for electric charging station company built with react next js.",
+        "Reusable component development for insurance company built with PHP & Drupal.",
       url: 'https://www.promutuelassurance.ca/en',
       screenshots: [
-        "/assets/natyf.png",
-        "/assets/promutuel.png",
-        "/assets/instaborne.jpeg",
+        "/assets/promutuel/promutuel-home.png",
+        "/assets/promutuel/promutuel-1.png",
+        "/assets/promutuel/promutuel-2.png"
+        
       ],
       strip_img: "Promutuel",
       id: "promutuel",
@@ -68,21 +69,21 @@ function Projects() {
     //   bg_image: "bg-fwdmovement",
     //   features: ['Next JS', 'Supabase', 'Tailwind']
     // },
-    {
-      name: "Natyf Tv",
-      short_description:
-        "Website for electric charging station company built with react next js.",
-      url: 'https://natyf.com/',
-      screenshots: [
-        "/assets/natyf.png",
-        "/assets/promutuel.png",
-        "/assets/instaborne.jpeg",
-      ],
-      strip_img: "natyf",
-      id: "natyf",
-      bg_image: "bg-natyf",
-      features: ['Next JS', 'Supabase', 'Tailwind']
-    },
+    // {
+    //   name: "Natyf Tv",
+    //   short_description:
+    //     "Website for electric charging station company built with react next js.",
+    //   url: 'https://natyf.com/',
+    //   screenshots: [
+    //     "/assets/natyf.png",
+    //     "/assets/promutuel.png",
+    //     "/assets/instaborne.jpeg",
+    //   ],
+    //   strip_img: "natyf",
+    //   id: "natyf",
+    //   bg_image: "bg-natyf",
+    //   features: ['Next JS', 'Supabase', 'Tailwind']
+    // },
   ];
 
   const [selectedSlice, setSelectedSlice] = useState('')
@@ -97,22 +98,13 @@ function Projects() {
     const sliceState = Flip.getState('.project-slice')
     const cardState = Flip.getState('.project-card')
     selectedSlice != project.id ? setSelectedSlice(e.currentTarget.id) : '';
-    Flip.from([sliceState, cardState], {duration: 1.6, ease: "power1.inOut"});
+    Flip.from([sliceState, cardState], {duration: 0.2, ease: "power1.inOut"});
   }
 
-  // function handleClose() {
-  //   setSelectedSlice(null)
-  //   const sliceState = Flip.getState('.project-slice')
-  //   const cardState = Flip.getState('.project-card')
-  //   gsap.to([sliceState, cardState], {duration: 1, ease: "power1.inOut"});
-  // }
-
   function handleClose() {
-    // const sliceState = Flip.getState('.project-slice');
-    const cardState = Flip.getState('.project-card');
+    // const cardState = Flip.getState('.project-card');
     setSelectedSlice(null);
-    // Flip.from(sliceState, {duration: 2, ease: "power1.inOut"});
-    Flip.from(cardState, {duration: 2, ease: "power1.inOut"})
+    // Flip.from(cardState, {duration: 2, ease: "power1.inOut"})
   }
 
   return (
@@ -122,7 +114,7 @@ function Projects() {
           key={i}
           id={project.id}
           className={`
-            project-slice transition-all ease-in-out duration-700 bg-cover bg-no-repeat overflow-hidden ${selectedSlice === project.id ? `w-full ${project.bg_image} shrink-0 md:shrink` : `${project.bg_image} grow md:w-28`}
+            project-slice transition-all ease-in-out duration-700 bg-cover bg-center bg-no-repeat overflow-hidden hover:grayscale-0 ${selectedSlice === project.id ? `grayscale-0 w-full ${project.bg_image} shrink-0 md:shrink` : `${project.bg_image} grow md:w-28 grayscale hover:scale-x-110`}
           `}
           onClick={(e) => {
             handleSliceClick(e, project);
@@ -130,7 +122,7 @@ function Projects() {
         >
           <span className="z-10">
             <div className="flex justify-between p-10">
-              <p className="text-orientation-vertical text-xl font-black">
+              <p className="text-orientation-vertical text-xl font-black text-white">
                 {project.name}
               </p>
               <button
@@ -143,7 +135,7 @@ function Projects() {
                 />
               </button>
             </div>
-            <ProjectCard className="project-card" selected={selectedSlice} project={project}/>
+            <ProjectCard className="transition-all ease-in-out duration-500 project-card" selected={selectedSlice} project={project}/>
           </span>
         </div>
       ))}

@@ -1,14 +1,13 @@
 "use client"
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { FaceSmileIcon } from '@heroicons/react/20/solid'
 import TransitionLink from './TransitionLink'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
+  const [selected, setSelected] = useState('projects')
+
   return (
     <Disclosure as="nav" className="bg-white backdrop-blur-md">
       {({ open }) => (
@@ -39,14 +38,14 @@ export default function Navigation() {
                   >
                     Projects
                   </a> */}
-                  <TransitionLink href="/" label="Projects"/>
+                  <TransitionLink href="/" label="Projects" id="" />
                   {/* <a
                     href="/about"
                     className="transition-all ease-in-out duration-1000 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black/90 font-mono"
                   >
                     About
                   </a> */}
-                  <TransitionLink href="/about" label="About" />
+                  <TransitionLink href="/about" label="About" id="about" />
                   {/* <a
                     href="/blog"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black/90 font-mono"
@@ -65,7 +64,7 @@ export default function Navigation() {
                   >
                     Contact
                   </a> */}
-                  <TransitionLink href="/contact" label="Contact" />
+                  <TransitionLink href="/contact" label="Contact" id="contact" />
                 </div>
               </div>
               {/* <div className="flex items-center">
