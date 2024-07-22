@@ -22,7 +22,8 @@
     "react-hook-form": "^7.52.1",
     "react-use-draggable-scroll": "^0.4.7",
     "resend": "^3.4.0",
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "yet-another-react-lightbox": "^3.21.1"
   },
   "devDependencies": {
     "@types/node": "20.14.11",

@@ -1,14 +1,30 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { SparklesIcon } from "@heroicons/react/20/solid";
 import { useDraggable } from "react-use-draggable-scroll";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 function ProjectCard({ project, selected }) {
+  const [open, setOpen] = useState()
+
   function Slider(projects, key) {
     const ref = useRef(); // We will use React useRef hook to reference the wrapping div:
     const { events } = useDraggable(ref, {
       isMounted: true,
       applyRubberBandEffect: true,
     });
+
+    const screenshotsArray = []
+
+    projects.project.screenshots.map((src) => {
+      screenshotsArray.push({"src": src})
+    })
+
+    const trigger = () => {
+      setOpen(true)
+
+      console.log(screenshotsArray, "screenshots Map")
+    }
 
     return (
       <div
@@ -18,13 +34,22 @@ function ProjectCard({ project, selected }) {
         {...events}
         ref={ref}
       >
+        <Lightbox
+          styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
+          open={open}
+          close={() => setOpen(false)}
+          slides={screenshotsArray}
+        />
         {projects.project.screenshots.map((src, i) => (
           <img
+            onClick={() => trigger()}
             key={i}
             src={src}
             className="image-slider-image h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
           />
         ))}
+
+
       </div>
     );
   }
@@ -33,14 +58,14 @@ function ProjectCard({ project, selected }) {
     <span className="z-10">
       <div
         id={`${project.id}-card`}
-        className={`overflow-hidden transition-all ease-in duration-1000 delay-700 py-1 ${
-          selected === `${project.id}`  ? '' : "transition-all ease-in duration-500 hidden"
-        }`}
+        className={`overflow-hidden transition-all ease-in duration-1000 delay-700 py-1 ${selected === `${project.id}` ? '' : "transition-all ease-in duration-500 hidden"
+          }`}
       >
         <div>
           <div>
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 md:pb-8">
               <div className="bg-white/10 backdrop-blur-md mx-auto flex max-w-2xl flex-col gap-16 px-6 py-16 ring-1 ring-white/20 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+
                 <Slider project={project} />
 
                 <div className="w-full flex-auto">
@@ -48,7 +73,7 @@ function ProjectCard({ project, selected }) {
                     {project.name}
                   </h2>
                   <p className="mt-6 text-lg leading-8 text-gray-300">
-                   {project.short_description}
+                    {project.short_description}
                   </p>
                   <ul
                     role="list"

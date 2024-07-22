@@ -15,7 +15,7 @@ module.exports = {
         '629_securite': "url('/assets/629_securite.png')",
         'fwdmovement': "url('/assets/fwdmovement.png')",
         'natyf': "url('/assets/natyf.png')",
-        'promutuel': "url('/assets/promutuel.png')",
+        'promutuel': "url('/assets/promutuelbg.jpg')",
       },
     },
   },

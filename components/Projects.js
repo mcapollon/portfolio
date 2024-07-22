@@ -39,21 +39,21 @@ function Projects() {
       bg_image: "bg-promutuel",
       features: ['PhP', 'Twig', 'Drupal']
     },
-    {
-      name: "629 Securite",
-      short_description:
-        "Website for electric charging station company built with react next js.",
-      url: 'https://www.629securite.com/fr',
-      screenshots: [
-        "/assets/natyf.png",
-        "/assets/promutuel.png",
-        "/assets/instaborne.jpeg",
-      ],
-      strip_img: "629_securite",
-      id: "629_securite",
-      bg_image: "bg-629_securite",
-      features: ['Next JS', 'Supabase', 'Tailwind']
-    },
+    // {
+    //   name: "629 Securite",
+    //   short_description:
+    //     "Website for electric charging station company built with react next js.",
+    //   url: 'https://www.629securite.com/fr',
+    //   screenshots: [
+    //     "/assets/natyf.png",
+    //     "/assets/promutuel.png",
+    //     "/assets/instaborne.jpeg",
+    //   ],
+    //   strip_img: "629_securite",
+    //   id: "629_securite",
+    //   bg_image: "bg-629_securite",
+    //   features: ['Next JS', 'Supabase', 'Tailwind']
+    // },
     // {
     //   name: "FWD Movement",
     //   short_description:
