@@ -11,7 +11,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'instaborne': "url('/assets/instaborne.jpeg')",
+        'instaborne': "url('/assets/instaborne.jpg')",
         '629_securite': "url('/assets/629_securite.png')",
         'fwdmovement': "url('/assets/fwdmovement.png')",
         'natyf': "url('/assets/natyf.png')",

@@ -114,7 +114,7 @@ function Projects() {
           key={i}
           id={project.id}
           className={`
-            project-slice transition-all ease-in-out duration-700 bg-cover bg-center bg-no-repeat overflow-hidden hover:grayscale-0 ${selectedSlice === project.id ? `grayscale-0 w-full ${project.bg_image} shrink-0 md:shrink` : `${project.bg_image} grow md:w-28 grayscale hover:scale-x-110`}
+            project-slice transition-all ease-in-out duration-700 bg-repeat overflow-hidden hover:grayscale-0 ${selectedSlice === project.id ? `grayscale-0 w-full ${project.bg_image} shrink-0 md:shrink` : `${project.bg_image} grow md:w-28 grayscale hover:scale-x-110`}
           `}
           onClick={(e) => {
             handleSliceClick(e, project);

@@ -11,7 +11,7 @@ export default function Navigation() {
   const pathName = usePathname()
 
   return (
-    <Disclosure as="nav" className={`${pathName == '/contact' ? 'bg-none' : 'bg-white' } z-40 backdrop-blur-md`}>
+    <Disclosure as="nav" className={`${pathName == '/contact' ? 'lg:bg-none' : 'bg-white' } z-40 backdrop-blur-md`}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
