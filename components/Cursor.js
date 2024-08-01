@@ -4,7 +4,7 @@ import gsap from 'gsap';
 
 function Cursor({isHovered}) {
 
-    const size = isHovered ? 100 : 30;
+    const size = isHovered ? 170 : 30;
     const circle = useRef()
     const mouse = useRef({
         x: 0,
