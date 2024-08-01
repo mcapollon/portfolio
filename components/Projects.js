@@ -4,6 +4,7 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 import ProjectCard from "./ProjectCard";
 import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
+import Cursor from '../components/Cursor'
 gsap.registerPlugin(Flip) 
 
 function Projects() {
@@ -11,7 +12,7 @@ function Projects() {
     {
       name: "Instaborne",
       short_description:
-        "Website development, estimation form and admin dashboard for electric charging station company built with react & next js.",
+        "Website development, estimation form and admin dashboard for electric charging station company built with react, next js and supabase as the database.",
       url: "https://instaborne.ca/",
       screenshots: [
         "/assets/instaborne/instaborne-homePage.png",
@@ -107,8 +108,11 @@ function Projects() {
     // Flip.from(cardState, {duration: 2, ease: "power1.inOut"})
   }
 
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <div className="flex flex-row min-h-screen">
+      <Cursor isHovered={isHovered} />
       {projects.map((project, i) => (
         <div
           key={i}
@@ -116,8 +120,11 @@ function Projects() {
           className={`
             project-slice transition-all ease-in-out duration-700 bg-repeat overflow-hidden hover:grayscale-0 ${selectedSlice === project.id ? `grayscale-0 w-full ${project.bg_image} shrink-0 md:shrink` : `${project.bg_image} grow md:w-28 grayscale hover:scale-x-110`}
           `}
+          onMouseEnter={() => {selectedSlice === project.id ? '' : setIsHovered(true)}}
+          onMouseLeave={() => {setIsHovered(false)}}
           onClick={(e) => {
             handleSliceClick(e, project);
+            setIsHovered(false)
           }}
         >
           <span className="z-10">
