@@ -16,15 +16,15 @@ export default function Navigation() {
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 justify-between">
-              <div className="flex grow justify-between pr-9">
+              <div className="flex grow justify-between">
                 
                 <div className="flex items-center">
                   <p className='text-black text-lg font-bold font-mono'>Mckinsley Apollon</p>
                 </div>
 
                 {/* Mobile menu button */}
-                <div className="-ml-2 mr-2 flex items-center md:hidden">
-                  <Disclosure.Button className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 transition-all ease-in-out duration-1000  hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
+                <div className="-ml-2 mr-2 flex md:hidden">
+                  <Disclosure.Button className="bg-white inline-flex float-right items-center p-2 rounded-md text-gray-400 transition-all ease-in-out duration-1000  hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                     ) : (
