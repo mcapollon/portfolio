@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
-import MobileDetect from 'mobile-detect';
+import {isMobile} from 'react-device-detect';
 
 function Cursor({isHovered}) {
 
@@ -44,9 +44,8 @@ function Cursor({isHovered}) {
         moveCircle(delayedMouse.current.x, mouse.current.y)
         window.requestAnimationFrame(animate);
     }
-
-    const md = new MobileDetect(navigator.userAgent);
-    if (md.mobile()) {
+ 
+    if (isMobile) {
         document.getElementById('cursor').classList.add('hidden')
     } else {
         console.log("Desktop device detected");
