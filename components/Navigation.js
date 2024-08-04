@@ -23,8 +23,8 @@ export default function Navigation() {
                 </div>
 
                 {/* Mobile menu button */}
-                <div className="-ml-2 mr-2 flex md:hidden">
-                  <Disclosure.Button className="bg-white inline-flex float-right items-center p-2 rounded-md text-gray-400 transition-all ease-in-out duration-1000  hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
+                <div className="flex md:hidden my-2">
+                  <Disclosure.Button className="bg-white inline-flex items-center p-2 rounded-md text-gray-400 transition-all ease-in-out duration-1000  hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                     ) : (
