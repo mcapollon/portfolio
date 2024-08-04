@@ -112,7 +112,7 @@ function Projects() {
 
   return (
     <div className="flex flex-row min-h-screen">
-      <Cursor isHovered={isHovered} />
+      <Cursor isHovered={isHovered}/>
       {projects.map((project, i) => (
         <div
           key={i}

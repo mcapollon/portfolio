@@ -81,7 +81,7 @@ export default function Contact() {
                         Have a project idea ? Let's make it happen.
                     </p>
                 </div>
-                <form onSubmit={handleSubmit(onSubmit)} className="mx-auto mt-16 max-w-xl sm:mt-20">
+                <form onSubmit={handleSubmit(onSubmit)} className="mx-auto max-w-xl">
                     <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                         <div>
                             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -236,7 +236,7 @@ export default function Contact() {
                     </div>
                 </form>
             </div>
-            <div className="gradient-bg">
+            <div className="gradient-bg h-full">
                 <svg xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="goo">

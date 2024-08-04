@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
+import MobileDetect from 'mobile-detect';
 
 function Cursor({isHovered}) {
 
@@ -44,6 +45,13 @@ function Cursor({isHovered}) {
         window.requestAnimationFrame(animate);
     }
 
+    const md = new MobileDetect(navigator.userAgent);
+    if (md.mobile()) {
+        document.getElementById('cursor').classList.add('hidden')
+    } else {
+        console.log("Desktop device detected");
+    }
+
     useEffect(() => {
         animate()
         window.addEventListener('mousemove', manageMouseMove)
@@ -52,6 +60,7 @@ function Cursor({isHovered}) {
 
   return (
     <div
+        id='cursor'
         className='z-50 fixed top-0 left-0 bg-cyan-600 rounded-full pointer-events-none mix-blend-difference'
         ref={circle}
         style={{
