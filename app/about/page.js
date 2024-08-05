@@ -1,6 +1,8 @@
 'use client'
 import { useEffect } from 'react';
 import '../gradientStyles.scss'
+import { DocumentArrowDownIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link';
 
 const socials = [
   { label: 'EMAIL', text: 'mckinsleyapollon@hotmail.com', link: 'mailto:mckinsleyapollon@hotmail.com' },
@@ -79,6 +81,27 @@ export default function About() {
                   <p className="mt-6">
                     An experienced Fullstack Developer with 5 years of expertise, dedicated to delivering high-quality software solutions to users. Focused on successful project completion and ensuring timely delivery. Passionate about creating exceptional software solutions that exceed client expectations. Committed to providing an outstanding user experience.
                   </p>
+
+                  <div className='grid grid-cols-1 w-1/2'>
+                    <button
+                      type="button"
+                      className="mt-4 inline-flex items-center gap-x-1.5 border-2 border-gray-200 rounded-md bg-white/50 px-3 py-2 text-sm font-semibold text-black drop-shadow-lg shadow-sm hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700"
+                    >
+                      <DocumentArrowDownIcon aria-hidden="true" className="-ml-0.5 h-5 w-5" />
+                      <Link href='/cv/CV_2024_AUG_ENG.pdf'>
+                      Download Resume
+                      </Link>
+                    </button>
+                    <button
+                      type="button"
+                      className="mt-4 inline-flex items-center gap-x-1.5 rounded-md border-2 border-gray-200 bg-white/50 px-3 py-2 text-sm font-semibold text-black drop-shadow-lg shadow-sm hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700"
+                    >
+                      <DocumentArrowDownIcon aria-hidden="true" className="-ml-0.5 h-5 w-5" />
+                      <Link href='/cv/CV_2024_AUG_FR.pdf'>
+                      Télécharger CV
+                      </Link>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

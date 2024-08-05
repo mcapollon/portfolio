@@ -7,11 +7,8 @@ const TransitionLink = ({href, label, id}) => {
     const pathname = usePathname()
 
     const formatedLabel = label.toLowerCase()
-    console.log(pathname, 'pathName')
-    console.log(id)
     
     const handleClick = () => {
-        console.log(id)
         if (pathname != href) {
             animatePageOut(href, router)
         }

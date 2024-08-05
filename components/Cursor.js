@@ -48,7 +48,7 @@ function Cursor({isHovered}) {
     if (isMobile) {
         document.getElementById('cursor').classList.add('hidden')
     } else {
-        console.log("Desktop device detected");
+        // console.log("Desktop device detected");
     }
 
     useEffect(() => {
