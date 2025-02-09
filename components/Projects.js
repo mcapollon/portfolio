@@ -33,58 +33,42 @@ function Projects() {
         "/assets/promutuel/promutuel-home.png",
         "/assets/promutuel/promutuel-1.png",
         "/assets/promutuel/promutuel-2.png"
-        
       ],
       strip_img: "Promutuel",
       id: "promutuel",
       bg_image: "bg-promutuel",
       features: ['PhP', 'Twig', 'Drupal']
     },
-    // {
-    //   name: "629 Securite",
-    //   short_description:
-    //     "Website for electric charging station company built with react next js.",
-    //   url: 'https://www.629securite.com/fr',
-    //   screenshots: [
-    //     "/assets/natyf.png",
-    //     "/assets/promutuel.png",
-    //     "/assets/instaborne.jpeg",
-    //   ],
-    //   strip_img: "629_securite",
-    //   id: "629_securite",
-    //   bg_image: "bg-629_securite",
-    //   features: ['Next JS', 'Supabase', 'Tailwind']
-    // },
-    // {
-    //   name: "FWD Movement",
-    //   short_description:
-    //     "Website for electric charging station company built with react next js.",
-    //   url: 'https://fwdmovement.vercel.app/fr',
-    //   screenshots: [
-    //     "/assets/natyf.png",
-    //     "/assets/promutuel.png",
-    //     "/assets/instaborne.jpeg",
-    //   ],
-    //   strip_img: "fwdmovement",
-    //   id: "fwdmovement",
-    //   bg_image: "bg-fwdmovement",
-    //   features: ['Next JS', 'Supabase', 'Tailwind']
-    // },
-    // {
-    //   name: "Natyf Tv",
-    //   short_description:
-    //     "Website for electric charging station company built with react next js.",
-    //   url: 'https://natyf.com/',
-    //   screenshots: [
-    //     "/assets/natyf.png",
-    //     "/assets/promutuel.png",
-    //     "/assets/instaborne.jpeg",
-    //   ],
-    //   strip_img: "natyf",
-    //   id: "natyf",
-    //   bg_image: "bg-natyf",
-    //   features: ['Next JS', 'Supabase', 'Tailwind']
-    // },
+    {
+      name: "Max Park",
+      short_description:
+        "Website and ticket management system for private parking management company",
+      url: 'https://www.maxparksolutions.com/',
+      screenshots: [
+        "/assets/maxpark/maxpark-home.png",
+        "/assets/maxpark/maxpark-services.png",
+        "/assets/maxpark/maxpark-payer-avis.png",
+      ],
+      strip_img: "maxpark",
+      id: "maxpark",
+      bg_image: "bg-maxpark",
+      features: ['React', 'Firebase', 'Tailwind']
+    },
+    {
+      name: "FWD Movement",
+      short_description:
+        "Website for FWD Movements, a Montreal-based company specializing in street dance, artistic performances, and cultural mediation built with Next JS.",
+      url: 'https://fwdmovements.com/fr',
+      screenshots: [
+        "/assets/fwdmovement/fwdmovement-equipe.png",
+        "/assets/fwdmovement/fwdmovement-histoire.png",
+        "/assets/fwdmovement/fwdmovement-home.png",
+      ],
+      strip_img: "fwdmovement",
+      id: "fwdmovement",
+      bg_image: "bg-fwdmovement",
+      features: ['Next JS', 'Supabase', 'Tailwind']
+    },
   ];
 
   const [selectedSlice, setSelectedSlice] = useState('')
@@ -111,14 +95,14 @@ function Projects() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <div className="flex flex-row min-h-screen">
+    <div className="flex flex-row min-h-screen -translate-y">
       <Cursor isHovered={isHovered}/>
       {projects.map((project, i) => (
         <div
           key={i}
           id={project.id}
           className={`
-            project-slice transition-all ease-in-out duration-700 bg-repeat overflow-hidden hover:grayscale-0 ${selectedSlice === project.id ? `grayscale-0 w-full ${project.bg_image} shrink-0 md:shrink` : `${project.bg_image} grow md:w-28 grayscale hover:scale-x-110`}
+            project-slice transition-all ease-in-out duration-700 bg-cover bg-center overflow-hidden hover:grayscale-0 ${selectedSlice === project.id ? `grayscale-0 w-full ${project.bg_image} shrink-0 md:shrink` : `${project.bg_image} grow md:w-28 grayscale hover:scale-x-110`}
           `}
           onMouseEnter={() => {selectedSlice === project.id ? '' : setIsHovered(true)}}
           onMouseLeave={() => {setIsHovered(false)}}

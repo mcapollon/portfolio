@@ -5,13 +5,14 @@ import TransitionLink from './TransitionLink'
 import { useState } from 'react'
 import Magnetic from '../common/Magnetic';
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function Navigation() {
   const [selected, setSelected] = useState('projects')
   const pathName = usePathname()
 
   return (
-    <Disclosure as="nav" className={`${pathName != '/' ? 'lg:bg-transparent' : 'bg-white' } z-40 backdrop-blur-md`}>
+    <Disclosure as="nav" className={`${pathName != '/' ? 'lg:bg-transparent' : 'bg-white' } z-40`}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -19,7 +20,7 @@ export default function Navigation() {
               <div className="flex grow justify-between">
                 
                 <div className="flex items-center">
-                  <p className='text-black text-lg font-bold font-mono'>Mckinsley Apollon</p>
+                  <Link href='/' className='text-black text-lg font-bold font-mono'>Mckinsley Apollon</Link>
                 </div>
 
                 {/* Mobile menu button */}
@@ -49,7 +50,7 @@ export default function Navigation() {
           </div>
 
           <Disclosure.Panel className="md:hidden">
-            <div className="space-y-1 pb-3 pt-2 bg-white">
+            <div className="space-y-1 pb-3 pt-2 bg-white/90 z-20">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
                 as="a"
